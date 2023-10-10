@@ -1,0 +1,54 @@
+.dtkey{
+    width: 250px;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    height: 40px;
+    border-radius: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.dtkey:hover{
+    background-color: blue;
+    cursor: pointer;
+    color: white;
+}
+
+.cncity{
+    display: inline-block;
+    width: 150px;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+.cnfrcsgreen, .cnfrcsblue, .cnfrcsred{
+    display: inline-block;
+    width: 150px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.cnfrcsgreen{
+    color: green;
+}
+
+.cnfrcsred{
+    color: red;
+}
+
+.cnfrcsblue{
+    color: blue;
+}
+
+.data{
+    width: 1050px;
+    height: 250px;
+    padding-left: 5%;
+    padding-right: 5%;
+}

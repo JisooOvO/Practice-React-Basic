@@ -1,0 +1,44 @@
+.theader{
+    background-color: blue;    
+}
+
+.theader th{
+    color: white;
+    text-align: center;
+}
+
+.dt{
+    font-size: large;
+    font-weight: bold;
+    color: blue;
+}
+
+.detail{
+    margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    border: 1px solid gold;
+    color: white;
+    background-color: red;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 90%;
+    border-bottom-left-radius: 90%;
+    text-align: center;
+}
+
+.detail:hover{
+    transform: scaleY(1.1);
+}
+
+td{
+    text-align: center;
+}
+
+td:nth-of-type(3){
+    text-align: end;
+}
