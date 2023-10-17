@@ -1,7 +1,7 @@
 import { BsInstagram } from "react-icons/bs";
 import ButtonBlue from "./ButtonBlue";
 import { useRef, useEffect, useState } from "react";
-import GalleryItem from "./GalleryItem";
+import GalleryCard from "../common/GalleryCard";
 
 const Gallery = () => {
   const txtKeyword = useRef();
@@ -27,7 +27,12 @@ const Gallery = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        setResult(data.response.body.items.item);
+        if (data.response.body.items.item === undefined) return; 
+        else
+        //setResult(data.response.body.items.item);
+        setResult(data.response.body.items.item.map((i,idx)=>
+        <GalleryCard item={i} idx={idx} key={idx} />
+       ));
     })
     .catch(e => console.log(e));
   };
@@ -38,11 +43,13 @@ const Gallery = () => {
     else setK(txtKeyword.current.value);
   };
 
-  const handleCancle = (e) => {
+  const handleCancel = (e) => {
     e.preventDefault();
-    console.log("cancel");
+    txtKeyword.current.focus();
+    txtKeyword.current.value = "";
+    setResult("");
   };
-
+  
   return (
     <main className="container">
         <article>
@@ -62,13 +69,15 @@ const Gallery = () => {
                     </div>
                     <div className="grid box-border">
                         <ButtonBlue caption={"확인"} handleClick={handleOK}/>
-                        <ButtonBlue caption={"취소"} handleClick={handleCancle}/>
+                        <ButtonBlue caption={"취소"} handleClick={handleCancel}/>
                     </div>
                 </div>
             </form>
         </article>
         <section>
-            { result && <GalleryItem item={result}/> }
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+            {result}        
+          </div>
         </section>
     </main>
   )

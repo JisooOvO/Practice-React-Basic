@@ -1,7 +1,9 @@
 const GalleryCard = ({item,idx}) => {
+
   const tags = item.galSearchKeyword.split(",").map((i,idx)=>
       <span key={`st${idx}`} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{"#"+i.trim()}</span>
   );
+
   return (
     <div key={idx} className="max-w-sm rounded overflow-hidden shadow-lg">
      <img className="w-full h-96" src={item.galWebImageUrl} alt={item.galTitle}/>
