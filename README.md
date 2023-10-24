@@ -8,3 +8,6 @@
      React icons
      스켈레톤 -> 실제 콘텐츠가 들어가게 될 자리를 잠시 대신할 빈 껍데기
      Recoil -> 전역변수관리
+09 : 컴포넌트 사용 예제2
+10 : React Route DOM -> App.js 에서 Route 연결
+     Router , query string

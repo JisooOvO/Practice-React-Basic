@@ -8,7 +8,9 @@ import './App.css';
 //import Taccident from './06/Taccident';
 //import MyRef from './07/MyRef';
 //import Gallery from './08/Gallery';
-import Busan from './09/Busan';
+//import Busan from './09/Busan';
+//import RouteMain from './10/RouteMain';
+import Fcst from './11/Fcst';
 function App() {
   return (
     //<Clock/>
@@ -20,7 +22,9 @@ function App() {
     //<Taccident/>
     //<MyRef/>
     //<Gallery/>
-    <Busan/>
+    //<Busan/>
+    //<RouteMain/>
+    <Fcst/>
   );
 }
 
