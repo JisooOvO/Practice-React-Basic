@@ -29,6 +29,13 @@ const FcstMain = () => {
     }
   }
 
+  const handleOK = (e) => {
+    if(dt === undefined | area === undefined){
+      alert("날짜 또는 지역을 선택하세요");
+      e.preventDefault();
+    } 
+  }
+
   //start
   useEffect(()=>{
     dtRef.current.focus();
@@ -36,18 +43,18 @@ const FcstMain = () => {
 
   return (
     <article>
-        <label id="fcst" className="text-xl font-bold mb-5">단기예보 선택</label>
+        <label id="fcst" className="text-xl font-bold mb-5 text-[#1095C1]">단기예보 선택</label>
         <form id="fcst" name="fcst" className="grid md:grid-cols-2">
-            <input onChange={handleDate} ref={dtRef} id="date1" name="date1" type="date" className="mb-4 h-10 p-0 m-0 cursor-pointer"/>
-            <select onChange={handleCity} ref={selRef} id="sel1" name="sel1" className="h-12 mb-4 p-0 m-0 cursor-pointer">
-                <option value="">지역 선택</option>
+            <input onChange={handleDate} ref={dtRef} id="date1" name="date1" type="date" className="mb-4 h-10 p-0 m-2"/>
+            <select onChange={handleCity} ref={selRef} id="sel1" name="sel1" className="h-12 mb-4 p-0 m-2 cursor-pointer">
+                <option value="" className="hidden">지역 선택</option>
                 {ops}
             </select>
             <Link to={`/ultra/${dt}/${area}/${x}/${y}`}>
-                <button className="bg-[#1095C1] text-xl font-bold rounded-xl text-white h-10 hover:bg-[#08769B]">초단기예보</button>
+                <button onClick={handleOK} className="bg-[#1095C1] shadow-md text-xl font-bold rounded-xl m-2 text-white h-10 hover:bg-[#08769B]">초단기예보</button>
             </Link>
             <Link to={`/vilage/${dt}/${area}/${x}/${y}`}>
-                <button className="bg-[#1095C1] text-xl font-bold rounded-xl text-white h-10 hover:bg-[#08769B]">단기예보</button>            
+                <button onClick={handleOK} className="bg-[#1095C1] shadow-md text-xl font-bold rounded-xl m-2 text-white h-10 hover:bg-[#08769B]">단기예보</button>            
             </Link>
         </form>
     </article>
